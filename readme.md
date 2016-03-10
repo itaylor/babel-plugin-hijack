@@ -18,10 +18,12 @@ the key being the file or matching glob to replace, and the value being what you
 ```
 {
   "presets": ["es2015"],
-  "plugins": ["hijack", {
+  "plugins": [
+    ["hijack", {
     "importYouWantToReplace": "whatYouWantItReplacedWith.js",
     "**/someFile.js": ""./myOverRideForSomeFile.js"
-  }]
+    }]
+  ]
 }
 ```
 
