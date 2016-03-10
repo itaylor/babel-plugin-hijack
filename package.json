@@ -1,0 +1,36 @@
+{
+  "name": "babel-plugin-hijack",
+  "version": "0.0.1",
+  "description": "A babel plugin that allows you to hijack and override imports or requires",
+  "main": "dist/index.js",
+  "repository": "github:itaylor/babel-plugin-hijack",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --ui tdd --compilers js:babel-register"
+  },
+  "keywords": [
+    "babel",
+    "plugin",
+    "dependency injection",
+    "override",
+    "hijack"
+  ],
+  "author": "ian.b.taylor@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core":"^6.5.2",
+    "babel-eslint": "^4.1.8",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-register": "^6.5.2",
+    "eslint-config-airbnb": "^5.0.1",
+    "eslint-plugin-babel": "^3.1.0",
+    "eslint-plugin-react": "^3.16.1",
+    "expect": "^1.14.0",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^6.1.2",
+    "mocha": "^2.3.3",
+    "redux": "^3.0.3"
+  }
+}
