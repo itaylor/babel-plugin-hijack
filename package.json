@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-hijack",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A babel plugin that allows you to hijack and override imports or requires",
   "main": "dist/index.js",
   "repository": "github:itaylor/babel-plugin-hijack",

@@ -10,7 +10,7 @@
 // }
 
 import minimatch from 'minimatch';
-import path from 'path';
+import { resolve, dirname, normalize } from 'path';
 
 export default function (babel) {
   const t = babel.types;
@@ -41,20 +41,18 @@ export default function (babel) {
 
 function resolveRelativeUrls(url, base) {
   if (url && url.indexOf('.') === 0) {
-    return path.resolve(base, url);
+    return resolve(base, url);
   }
-  return path.normalize(url);
+  return normalize(url);
 }
 
 function hijack(url, state) {
   const { opts: hijacks = {} } = state;
-  const resolvedUrl = resolveRelativeUrls(url, path.dirname(state.file.opts.filename));
-  console.log('resolved url', url, resolvedUrl);
+  const resolvedUrl = resolveRelativeUrls(url, dirname(state.file.opts.filename));
   const keys = Object.keys(hijacks);
   for (const key of keys) {
     const match = url === key || minimatch(resolvedUrl, key);
     if (match) {
-      console.log('returning hijack for ', url, resolvedUrl, key, hijacks[key]);
       return hijacks[key];
     }
   }

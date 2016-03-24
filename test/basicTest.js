@@ -19,7 +19,7 @@ suite('Babel-plugin-hijack tests', () => {
     const parsed = babel.transformFileSync(path.resolve(__dirname, './fixture1.js'), babelOpts);
     const code = parsed.code;
     expect(code).toContain('./fixture2overrides');
-    const evaledCode = eval(code);
+    const evaledCode = eval(code); // eslint-disable-line no-eval
     expect(evaledCode.fixture2Imported()).toBe('fixture2overrides');
     expect(evaledCode.fixture2Required()).toBe('fixture2overrides');
     expect(evaledCode.fixture3()).toBe('fixture3overrides');
